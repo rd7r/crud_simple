@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\CellularController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,13 +21,6 @@ Route::get('/', function () {
 
 Route::get('contacto', [ContactoController::class, 'index']);
 
-/*
-//llamamos directo a la vista directo sin controlador
-Route::get('/contacto',function(){
-    return view('contacto');
-});
-//los parametros opcionales
-Route::get('/name/{nombre}/lastname/{apellido?}', function($nombre,$apellido =  null){
-    return 'bienvenido '.$nombre.' '.$apellido;
-});
-*/
+Route::get('cellular', [CellularController::class, 'index']);
+Route::get('show', [CellularController::class, 'create']);
+
